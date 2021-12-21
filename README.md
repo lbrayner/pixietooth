@@ -2,7 +2,8 @@
 ## Packages
 
 - pyyaml
+- Mastodon.py
 
 ```
-pip3 install pyyaml
+pip3 install pyyaml Mastodon.py
 ```
