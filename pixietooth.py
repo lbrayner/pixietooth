@@ -16,21 +16,17 @@ names = args.file
 # TODO as parameter
 with open("/home/desenvolvedor/other/git/pixietooth/.personal_access_token","r") as file:
     personal_access_token = file.read().rstrip()
-# print(personal_access_token) # TODO debug
 
 mastodon = Mastodon(
     access_token = personal_access_token,
-    api_base_url = 'https://pixelfed.social/' # TODO as parameter
+    api_base_url = "https://pixelfed.social/" # TODO as parameter
 )
 
-# print("%s" % names) # TODO debug
 for name in names:
     stream = open(name,"r",encoding="utf-8")
     post = load(stream,Loader=Loader)
-    # print(post) # TODO debug
-    # print("items %s, text %s" % (post["items"],post["text"])) # TODO debug
     ids = []
     for item in post["items"]:
-        media = mastodon.media_post(media_file = item)
+        media = mastodon.media_post(media_file=item)
         ids.append(media["id"])
-    mastodon.status_post(post["text"], media_ids = ids)
+    mastodon.status_post(post["text"],media_ids=ids)
