@@ -8,18 +8,25 @@ from mastodon import Mastodon
 import argparse
 
 parser = argparse.ArgumentParser(description="Post to a Pixelfed instance")
+parser.add_argument("-f","--token-file",
+        help="A file containing a Pixelfed access token",
+        required=True)
+parser.add_argument("-i","--instance",
+        help="A Pixelfed instance (https://pixelfed.social by default)",
+        default="https://pixelfed.social")
 parser.add_argument("file",nargs="+",help="YAML file describing the post")
 args = parser.parse_args()
 
+token_file = args.token_file
+instance = args.instance
 names = args.file
 
-# TODO as parameter
-with open("/home/desenvolvedor/other/git/pixietooth/.personal_access_token","r") as file:
+with open(token_file,"r") as file:
     personal_access_token = file.read().rstrip()
 
 mastodon = Mastodon(
     access_token = personal_access_token,
-    api_base_url = "https://pixelfed.social/" # TODO as parameter
+    api_base_url = instance
 )
 
 for name in names:
