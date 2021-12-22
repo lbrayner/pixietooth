@@ -1,4 +1,5 @@
 # Python 3
+
 ## Packages
 
 - pyyaml
@@ -10,7 +11,9 @@ pip3 install pyyaml Mastodon.py
 
 # Synopsis
 
+```
 ./pixietooth [-h] -f TOKEN_FILE [-i INSTANCE] file [file ...]
+```
 
 # Description
 
