@@ -17,11 +17,11 @@ pip3 install pyyaml Mastodon.py
 
 # Description
 
-Supply a file contaning an access toke, optionally an instance
+Supply a file contaning an access token, optionally an instance
 (<https://pixelfed.social> by default), and one or more YAML files describing
 Pixelfed posts.
 
-An example of a post:
+An example of such a file:
 
 ```yml
 text: |
