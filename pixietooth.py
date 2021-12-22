@@ -15,7 +15,7 @@ parser.add_argument("-f","--token-file",
 parser.add_argument("-i","--instance",
         help="A Pixelfed instance (https://pixelfed.social by default)",
         default="https://pixelfed.social")
-parser.add_argument("file",nargs="+",help="YAML file describing the post")
+parser.add_argument("file",nargs="+",help="YAML file describing the post (UTF-8)")
 args = parser.parse_args()
 
 token_file = args.token_file
@@ -31,7 +31,7 @@ mastodon = Mastodon(
 )
 
 for name in names:
-    stream = open(name,"r",encoding="utf-8")
+    stream = open(name,"r",encoding="UTF-8")
     post = load(stream,Loader=Loader)
     ids = []
     for item in post["items"]:
