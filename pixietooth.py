@@ -7,7 +7,8 @@ except ImportError:
 from mastodon import Mastodon
 import argparse
 
-parser = argparse.ArgumentParser(description="Post to a Pixelfed instance")
+parser = argparse.ArgumentParser(description="Post to a Pixelfed instance with YAML files",
+        prog="pixietooth")
 parser.add_argument("-f","--token-file",
         help="A file containing a Pixelfed access token",
         required=True)
