@@ -9,10 +9,23 @@
 pip3 install pyyaml Mastodon.py
 ```
 
-# Synopsis
+# Usage
 
 ```
-./pixietooth [-h] -f TOKEN_FILE [-i INSTANCE] file [file ...]
+usage: pixietooth [-h] -f TOKEN_FILE [-i INSTANCE] [-s] file [file ...]
+
+Post to a Pixelfed instance with YAML files
+
+positional arguments:
+  file                  YAML file describing the post (UTF-8)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f TOKEN_FILE, --token-file TOKEN_FILE
+                        A file containing a Pixelfed access token
+  -i INSTANCE, --instance INSTANCE
+                        A Pixelfed instance (https://pixelfed.social by default)
+  -s, --sensitive       Sensitive/NSFW content
 ```
 
 # Description
