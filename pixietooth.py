@@ -15,11 +15,15 @@ parser.add_argument("-f","--token-file",
 parser.add_argument("-i","--instance",
         help="A Pixelfed instance (https://pixelfed.social by default)",
         default="https://pixelfed.social")
+parser.add_argument("-s","--sensitive",
+        help="Sensitive/NSFW content",
+        action="store_true")
 parser.add_argument("file",nargs="+",help="YAML file describing the post (UTF-8)")
 args = parser.parse_args()
 
 token_file = args.token_file
 instance = args.instance
+sensitive = args.sensitive
 names = args.file
 
 with open(token_file,"r") as file:
@@ -37,4 +41,4 @@ for name in names:
     for item in post["items"]:
         media = mastodon.media_post(media_file=item)
         ids.append(media["id"])
-    mastodon.status_post(post["text"],media_ids=ids)
+    mastodon.status_post(post["text"],media_ids=ids,sensitive=sensitive)
