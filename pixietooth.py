@@ -31,7 +31,8 @@ with open(token_file,"r") as file:
 
 mastodon = Mastodon(
     access_token = personal_access_token,
-    api_base_url = instance
+    api_base_url = instance,
+    version_check_mode = "none" # Pixelfed's versioning is independent of Mastodon's
 )
 
 for name in names:
