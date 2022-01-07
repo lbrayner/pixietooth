@@ -12,7 +12,7 @@ pip3 install pyyaml Mastodon.py
 # Usage
 
 ```
-usage: pixietooth [-h] -f TOKEN_FILE [-i INSTANCE] [-s] file [file ...]
+usage: pixietooth [-h] -f TOKEN_FILE [-i INSTANCE] [-s] [-w VISIBILITY] file [file ...]
 
 Post to a Pixelfed instance with YAML files
 
@@ -26,6 +26,8 @@ optional arguments:
   -i INSTANCE, --instance INSTANCE
                         A Pixelfed instance (https://pixelfed.social by default)
   -s, --sensitive       Sensitive/NSFW content
+  -w VISIBILITY, --visibility VISIBILITY
+                        One of 'direct', 'private', 'unlisted' and 'public'
 ```
 
 # Description
